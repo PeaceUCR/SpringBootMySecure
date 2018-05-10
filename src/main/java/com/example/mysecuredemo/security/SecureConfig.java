@@ -28,7 +28,7 @@ public class SecureConfig  extends WebSecurityConfigurerAdapter {
                 .withUser("admin").password(password).roles("ADMIN");
     }
 
-/*
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
@@ -42,5 +42,5 @@ public class SecureConfig  extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
     }
-*/
+
 }
