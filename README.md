@@ -1,5 +1,6 @@
 # SpringBootMySecure
 
+some graph form https://blog.csdn.net/code__code/article/details/53885510
 
 Add Role.java in User(will be used in UserDetails)
 
