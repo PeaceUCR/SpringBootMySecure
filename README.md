@@ -1,5 +1,8 @@
 # SpringBootMySecure
 
+WorkFlow for the Spring Security 
+https://stackoverflow.com/questions/23088004/spring-security-workflow
+
 some graph form https://blog.csdn.net/code__code/article/details/53885510
 
 Add Role.java in User(will be used in UserDetails)
