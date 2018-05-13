@@ -1,6 +1,8 @@
 package com.example.mysecuredemo.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class User {
@@ -12,11 +14,20 @@ public class User {
     private String username;
 
     private String email;
-    //@Transient
+
+    @Transient
     private String password;
 
     private String encryptedPassword;
     private Boolean enabled = true;
+
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable
+    // ~ defaults to @JoinTable(name = "USER_ROLE", joinColumns = @JoinColumn(name = "user_id"),
+    //     inverseJoinColumns = @joinColumn(name = "role_id"))
+    private List<Role> roles = new ArrayList<Role>();
+
 
     private Integer failedLoginAttempts = 0;
 
@@ -68,6 +79,29 @@ public class User {
         this.failedLoginAttempts = failedLoginAttempts;
     }
 
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public void addRole(Role role){
+        if(!this.roles.contains(role)){
+            this.roles.add(role);
+        }
+
+        if(!role.getUsers().contains(this)){
+            role.getUsers().add(this);
+        }
+    }
+
+    public void removeRole(Role role){
+        this.roles.remove(role);
+        role.getUsers().remove(this);
+    }
 
     @Override
     public String toString() {

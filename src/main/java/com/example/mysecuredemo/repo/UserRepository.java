@@ -15,7 +15,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
     //https://docs.spring.io/spring-data/data-commons/docs/1.6.1.RELEASE/reference/html/repositories.html
     //some default you can use, some crud by custom props need to add manual
-    //find by email
+    //find by name
     List<User> findByUsername(String name);
 
 
