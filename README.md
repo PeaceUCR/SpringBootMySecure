@@ -19,3 +19,5 @@ in userDetailImpl get password should return user.getEncryptedPassword(); becaus
 
 in form, we still need to set the username instead of email in the form input name
  <!-- userdetails secure will get form username from html request, even you load email in userserviceIMPL -->
+ 
+ Spring Security Arch https://spring.io/guides/topicals/spring-security-architecture/
