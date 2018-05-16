@@ -1,4 +1,4 @@
-# SpringBootMySecure
+# SpringBoo Security In Memory Authtication
 
 Add the spring-boot-starter-security in pom.xml
 
