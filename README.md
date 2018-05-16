@@ -21,3 +21,10 @@ in form, we still need to set the username instead of email in the form input na
  <!-- userdetails secure will get form username from html request, even you load email in userserviceIMPL -->
  
  Spring Security Arch https://spring.io/guides/topicals/spring-security-architecture/
+
+
+SetRedirect After Login
+Add LoginSuccessHandler in the SecureCinfig,
+
+Store the previous url in request at ViewController,
+then take out in in loginSuccessHandler

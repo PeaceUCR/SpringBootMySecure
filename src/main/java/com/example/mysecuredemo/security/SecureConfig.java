@@ -23,6 +23,12 @@ public class SecureConfig  extends WebSecurityConfigurerAdapter {
     private UserDetailsService uds;
 
 
+    @Autowired
+    loginSuccessHandler handler;
+    @Bean
+    public loginSuccessHandler addHandler(){
+        return new loginSuccessHandler();
+    }
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
@@ -42,10 +48,10 @@ public class SecureConfig  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .authorizeRequests().antMatchers("/", "/console/**").permitAll()
+                .authorizeRequests().antMatchers( "/console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").permitAll()
+                .formLogin().loginPage("/login").permitAll().successHandler(handler)
                 .and()
                 .logout().permitAll();
 

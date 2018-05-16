@@ -70,6 +70,7 @@ public class appInit implements ApplicationListener<ContextRefreshedEvent> {
         user3.setUserEmail("user1@cdk.com");
         user3.setPassword("user1");
         user3.addRole(adminRole);
+        user3.setEncryptedPassword(pe.encode("user3"));
         urepo.save(user3);
 
 
@@ -78,6 +79,7 @@ public class appInit implements ApplicationListener<ContextRefreshedEvent> {
         user4.setUserEmail("user4@cdk.com");
         user4.setPassword("user4");
         user4.addRole(adminRole);
+        user4.setEncryptedPassword(pe.encode("user4"));
         urepo.save(user4);
         /*
         Iterator<User> list= urepo.findAll().iterator();
