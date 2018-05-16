@@ -1,4 +1,4 @@
-# SpringBootMySecure
+# SpringBoot JPA Repository CRUD
 
 Use H2 as default in mem database at http://localhost:8080/console , configured at application.properties
 
