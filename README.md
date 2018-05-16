@@ -1,4 +1,4 @@
-# SpringBootMySecure
+# SpringBootMySecure auth users from database
 
 WorkFlow for the Spring Security 
 https://stackoverflow.com/questions/23088004/spring-security-workflow
